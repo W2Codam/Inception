@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+  nginx:
+    container_name: "nginx"
+    build: ./requirements/nginx/
+    ports:
+      - "8080:8080"
+    networks:
+      - frontend
+
+  mariadb:
+   container_name: "mariadb"
+   build: ./requirements/mariadb/
+   networks:
+      - frontend
+
+networks:
+  frontend:
+    name: 42Network
+    driver: bridge

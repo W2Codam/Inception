@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W2 Wizard's Website</title>
+    <!-- <link rel="stylesheet" href="./style/main.css" /> -->
+    <script src="https://kit.fontawesome.com/86d317015c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./assets/W2Logo.svg" />
+    <link rel="stylesheet" href="./src/style/main.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="./assets/W2Logo.svg" class="logo" alt="Logo" />
+            <h1>W2.Wizard</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="about-section">
+            <canvas></canvas>
+            <div class="container">
+                <img src="./assets/W2Logo.svg" class="logo" alt="Logo" style="width:8rem;height: 8rem;" />
+                <span class="name">W2.Wizard</span>
+
+                <span class="description">
+                    I'm a Wizard in all sorts of things!
+                    <br>
+                    Mainly focused on game engines and game development.
+                </span>
+
+                <span id="skills-title" class="skills-title">Skills</span>
+
+                <div class="skills">
+                    <div class="skill-shield">C</div>
+                    <div class="skill-shield">C++</div>
+                    <div class="skill-shield">C#</div>
+                    <div class="skill-shield">Unreal Engine</div>
+                    <div class="skill-shield">Flax Engine</div>
+                </div>
+
+                <div class="socials">
+                    <a class="hidden-link" href="https://github.com/W2Wizard">
+                        <i class="fab fa-github-square hover-focus github-hover"></i>
+                    </a>
+                    <a class="hidden-link" href="https://twitter.com/w2_wizard">
+                        <i class="fab fa-twitter-square hover-focus twitter-hover"></i>
+                    </a>
+                    <a class="hidden-link" href="https://www.youtube.com/channel/UC2ilFo1F-PeE5XRQ1dLRrUg">
+                        <i class="fab fa-youtube-square hover-focus youtube-hover"></i>
+                    </a>
+                </div>
+
+                <a href="#projects-section" class="hidden-link text-center arrow-animated">
+                    <i id="arrow-animated" class="fas fa-chevron-down hover-focus"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="projects-section">
+
+            <h2>Recent work</h2>
+
+            <div id="projects">
+		    
+                <div class="card">
+                    <a class="hidden-link" href="https://github.com/codam-coding-college/MLX42/">
+                        <div class="card-image codam-logo"></div>
+                        <span class="card-title">MLX42</span>
+                        <span class="card-description">
+							MLX42 is a simple, small and fast graphical windowing API that lets students in the 42 Network
+							Create graphical projects with ease. It started off as an attempt to learn OpenGL with a mission of
+							replacing the old miniLibX library that was in place before. It features rich documentation, ease of use and
+							hight stability (e.g: No Segfaults or leaking PNG Importert)
+                        </span>
+                    </a>
+                </div>
+		    
+                <div class="card">
+                    <a class="hidden-link" href="https://www.codam.nl/">
+                        <div class="card-image codam-logo"></div>
+                        <span class="card-title">Codam Coding College</span>
+                        <span class="card-description">
+							As of October 2021 I am part of Codam, a school in the 42 Network.
+							I really wanted to avoid any University after secondary school, and Codam
+							proved to be the right choice!
+                            <br><br>
+                            42, The meaning of life!
+                        </span>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a class="hidden-link" href="https://github.com/W2Wizard/W2Wizard.github.io/wiki/Volumetric-Galaxy">
+                        <div class="card-image galaxy-project-logo"></div>
+                        <span class="card-title">Volumetric Galaxy</span>
+                        <span class="card-description">
+                            A procedural galaxy which uses volumetric fog particles for nebulae
+                            as well as being able to generate star systems with planets that you can visit.
+                            <br><br>
+                            Allows the user to create their very own world and play god!
+                        </span>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a class="hidden-link" href="https://github.com/W2Wizard/W2Wizard.github.io/wiki/Console-Manager">
+                        <div class="card-image console-project-logo"></div>
+                        <span class="card-title">Console Manager</span>
+                        <span class="card-description">
+                            A plugin that lets you add custom console commands and handle their
+                            execution via blueprints, no C++ is required!. <br><br> Making debugging really easy as well as opening up the console to more developers.
+                        </span>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a class="hidden-link" href="https://github.com/W2Wizard/W2Wizard.github.io/wiki/UMG-Colorwheel">
+                        <div class="card-image color-project-logo"></div>
+                        <span class="card-title">UMG Colorwheel</span>
+                        <span class="card-description">
+                            Make your life colorfull! A plugin for Unreal Engine 4 that lets you use a colorwheel and pick a color (duh!)
+                            <br><br>
+                            This was the first plugin/product I released for Unreal Engine.
+                        </span>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a class="hidden-link" href="https://github.com/W2Wizard/W2Wizard.github.io/wiki/Basic-Utils-Library">
+                        <div class="card-image utils-project-logo"></div>
+                        <span class="card-title">Basic Utils Library</span>
+                        <span class="card-description">
+                            My utils library plugin was completely written in C++ and encompassed everyday functions that I use all the time.
+                            <br><br>
+                            It included sorting algorithms, data serialization, File IO operations & direct array converters.
+                        </span>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a class="hidden-link" href="https://github.com/W2Wizard/W2Wizard.github.io/wiki/Project-Life-RPG">
+                        <div class="card-image PRJ-project-logo"></div>
+                        <span class="card-title">Project Life RPG</span>
+                        <span class="card-description">
+                            Project Life RPG was a freelance job that I took which involved building a mulitplayer role playing game who's origins come from the GTA V role playing mod.
+                            <br><br>
+                            My tasks included working on driveable vehicles, including customization, and a Construction Kit which allowed the user to place furniture in their apartments.
+                        </span>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a class="hidden-link" href="https://github.com/FlaxEngine/FlaxEngine">
+                        <div class="card-image flax-project-logo"></div>
+                        <span class="card-title">Flax Engine</span>
+                        <span class="card-description">
+                            In late december I found out about the Flax Engine and decided that it was a good starting point to go a step beyond simple game development.
+                            <br><br>
+                            As a result I have contributed lots of PRs towards the Flax Engine both source and documentation wise.
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="content">
+            <div class="contact">
+                <span class="title">Contact</span>
+
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>E-Mail</td>
+                                <td><a class="hidden-link hover-focus"
+                                        href="mailto:main@w2wizard.dev">main@w2wizard.dev</a></td>
+                            </tr>
+                            <tr>
+                                <td>Discord</td>
+                                <td class="hover-focus">W2.Wizard#7240</td>
+                            </tr>
+                            <tr>
+                                <td>Epic Games</td>
+                                <td><a class="hidden-link hover-focus"
+                                        href="https://www.unrealengine.com/marketplace/en-US/profile/W2Wizard">W2Wizard</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="credits">
+            <span>Created by <span class="credit-title hover-focus"><a class="hidden-link"
+                        href="https://www.github.com/VNNCC">VNNCC</a></span> © 2021-2022
+                VNC#1607</span>
+        </div>
+    </footer>
+</body>
+
+<script src="./src/scripts/main.js"></script>
+<script src="./src/scripts/particles.js"></script>
+
+</html>

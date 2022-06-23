@@ -44,7 +44,7 @@ services:
    container_name: "42Mariadb"
    build: ./requirements/mariadb/
    volumes:
-      - volume-mariadb:/var/db/mysql/
+      - volume-mariadb:/var/lib/mysql
    restart: unless-stopped
    networks:
       - frontend

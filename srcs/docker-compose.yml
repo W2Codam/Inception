@@ -1,18 +1,51 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Dockerfile                                         :+:    :+:             #
+#                                                      +:+                     #
+#    By: lde-la-h <lde-la-h@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/06/21 17:11:22 by lde-la-h      #+#    #+#                  #
+#    Updated: 2022/06/21 17:11:23 by lde-la-h      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 version: "3"
 
 services:
 
+  # Nginx service
   nginx:
-    container_name: "nginx"
+    depends_on:
+      - wordpress
+    container_name: "42Nginx"
     build: ./requirements/nginx/
+    volumes:
+      - volume-wordpress:/var/www/
     ports:
-      - "8080:8080"
+      - "443:443"
     networks:
       - frontend
 
+  # Wordpress service
+  wordpress:
+    depends_on:
+      - mariadb
+    container_name: "42Wordpress"
+    build: ./requirements/wordpress/
+    volumes:
+      - volume-wordpress:/var/www/
+    restart: unless-stopped
+    networks:
+      - frontend
+
+  # mariadb service
   mariadb:
-   container_name: "mariadb"
+   container_name: "42Mariadb"
    build: ./requirements/mariadb/
+   volumes:
+      - volume-mariadb:/var/db/mysql/
+   restart: unless-stopped
    networks:
       - frontend
 
@@ -20,3 +53,20 @@ networks:
   frontend:
     name: 42Network
     driver: bridge
+
+# Data is stored in the balls
+volumes:
+
+  volume-mariadb:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: ${VOL_PATH}/mariadb
+
+  volume-wordpress:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: ${VOL_PATH}/wordpress

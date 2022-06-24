@@ -51,7 +51,6 @@ services:
 
 networks:
   frontend:
-    name: 42Network
     driver: bridge
 
 # Data is stored in the balls

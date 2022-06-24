@@ -24,6 +24,7 @@ services:
       - volume-wordpress:/var/www/
     ports:
       - "443:443"
+      - "80:80" # Redirect http to https
     networks:
       - frontend
 

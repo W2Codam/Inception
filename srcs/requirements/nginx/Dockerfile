@@ -6,13 +6,14 @@
 #    By: lde-la-h <lde-la-h@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/21 17:11:26 by lde-la-h      #+#    #+#                  #
-#    Updated: 2022/06/23 14:39:31 by lde-la-h      ########   odam.nl          #
+#    Updated: 2022/06/24 12:12:20 by lde-la-h      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 FROM debian:buster
 
 EXPOSE 443
+EXPOSE 80
 
 # Install deps
 RUN apt update && apt-get upgrade -y

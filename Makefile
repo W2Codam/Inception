@@ -6,7 +6,7 @@
 #    By: lde-la-h <lde-la-h@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/09 07:50:32 by lde-la-h      #+#    #+#                  #
-#    Updated: 2022/06/23 18:19:13 by lde-la-h      ########   odam.nl          #
+#    Updated: 2022/06/24 12:03:02 by lde-la-h      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,6 @@ up:
 down:
 	@printf "$(GREEN)$(BOLD)\rDocker: $@\n$(RESET)"
 	@docker-compose -f $(COMPOSE) down -t 2
-
-#fdown:
-#	@docker-compose -f $(COMPOSE) down -v
 
 clean:
 	@docker-compose -f $(COMPOSE) down --rmi all

@@ -6,7 +6,7 @@
 #    By: lde-la-h <lde-la-h@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/21 17:11:26 by lde-la-h      #+#    #+#                  #
-#    Updated: 2022/06/28 14:12:51 by lde-la-h      ########   odam.nl          #
+#    Updated: 2022/06/28 14:32:51 by lde-la-h      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ENV BUILDDIR=/tmp/web/
 RUN mkdir ${BUILDDIR}
 
 # Move the tools/resources to the working dir
-COPY tools/ ${WORKDIR}
+COPY conf/ ${WORKDIR}
 
 # Move all the garbage to the right place
 RUN chmod 770 mkcert-v1.4.4 && \

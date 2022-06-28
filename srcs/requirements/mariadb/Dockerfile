@@ -6,7 +6,7 @@
 #    By: lde-la-h <lde-la-h@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/21 17:11:29 by lde-la-h      #+#    #+#                  #
-#    Updated: 2022/06/23 13:54:36 by lde-la-h      ########   odam.nl          #
+#    Updated: 2022/06/28 14:33:01 by lde-la-h      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RUN apt update && apt-get upgrade -y
 RUN apt install mariadb-server mariadb-client gettext-base -y
 
 WORKDIR /tmp/mariadb/
-COPY tools/ ${WORKDIR}
+COPY conf/ ${WORKDIR}
 
 #RUN mkdir -p /run/mysql
 

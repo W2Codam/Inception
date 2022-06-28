@@ -6,7 +6,7 @@
 #    By: lde-la-h <lde-la-h@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/21 17:11:22 by lde-la-h      #+#    #+#                  #
-#    Updated: 2022/06/28 12:37:19 by lde-la-h      ########   odam.nl          #
+#    Updated: 2022/06/28 14:47:11 by lde-la-h      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ENV BUILDDIR=/tmp/build/
 RUN mkdir ${BUILDDIR} && mkdir -p /run/php
 
 # Move the tools/resources to the working dir
-COPY tools/ ${WORKDIR}
+COPY conf/ ${WORKDIR}
 
 # Unpack wordpress && mv wp-config.php ${BUILDDIR} && mv index.php ${BUILDDIR}
 RUN tar xzf wordpress-6.0.tar.gz --directory ${BUILDDIR} && \
@@ -43,5 +43,6 @@ RUN chmod 777 wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp-cli
 # Move everything from builddir to /var/www and install the wordpress website
 CMD cp -a ${BUILDDIR}. /var/www/ && \
 	wp-cli core install --allow-root --title="Wordpress" --admin_name="balls" --admin_password="balls1234" --admin_email="balls@w2wizard.dev" --path="/var/www/wordpress/" --url="https://localhost/wordpress" && \
+	wp-cli user delete --allow-root --yes bruh --path="/var/www/wordpress/" && \
 	wp-cli user create --allow-root bruh bruh@w2wizard.dev --user_pass="balls1234" --path="/var/www/wordpress/" && \
 	php-fpm7.3 -F -R

@@ -6,7 +6,7 @@
 #    By: lde-la-h <lde-la-h@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/09 07:50:32 by lde-la-h      #+#    #+#                  #
-#    Updated: 2022/06/24 12:03:02 by lde-la-h      ########   odam.nl          #
+#    Updated: 2022/06/28 12:25:37 by lde-la-h      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,19 +33,22 @@ COMPOSE := srcs/docker-compose.yml
 
 up:
 	@printf "$(GREEN)$(BOLD)\rDocker: $@\n$(RESET)"
-	@docker-compose -f $(COMPOSE) up -d --build --remove-orphans
+	@docker compose -f $(COMPOSE) up -d --build --remove-orphans
 
 down:
 	@printf "$(GREEN)$(BOLD)\rDocker: $@\n$(RESET)"
-	@docker-compose -f $(COMPOSE) down -t 2
+	@docker compose -f $(COMPOSE) down -t 2
 
 clean:
-	@docker-compose -f $(COMPOSE) down --rmi all
+	@docker compose -f $(COMPOSE) down --rmi all
 
 re:
+#@rm -rf ${HOME}/data
+#@mkdir -p ${HOME}/data/mariadb
+#@mkdir -p ${HOME}/data/wordpress
 #@docker stop all
 #@docker rm all
 #@docker rmi -f all
-	@docker-compose -f $(COMPOSE) build --no-cache && docker-compose -f $(COMPOSE) up -d --force-recreate
+	@docker compose -f $(COMPOSE) build --no-cache && docker-compose -f $(COMPOSE) up -d --force-recreate --remove-orphans
 
 .PHONY: up down fdown clean
